@@ -5,7 +5,7 @@ import { webhookRoutes } from './routes/webhooks.js';
 
 const store = new WebhookStore();
 
-/** Demo downstream: fail first attempt for payment.settled to exercise retries. */
+/** Sample downstream: fail once on payment.settled to exercise retry behavior. */
 const dispatcher = new WebhookDispatcher(store, async (event) => {
   if (event.eventType === 'payment.settled' && event.attempts < 2) {
     throw new Error('downstream_timeout');

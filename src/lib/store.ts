@@ -14,7 +14,7 @@ export type WebhookEvent = {
 };
 
 /**
- * In-memory store for the portfolio demo.
+ * In-memory store for local development.
  * Swap for Postgres/Redis in production without changing the retry policy.
  */
 export class WebhookStore {
